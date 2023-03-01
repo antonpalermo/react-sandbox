@@ -2,15 +2,15 @@ import { useMemo } from "react"
 
 interface NameListProps {
   list: string[]
+  sortFunc: (a: string, b: string) => number
 }
 
-function NameList({ list }: NameListProps) {
-  console.log("Name List Component Rendered")
-
+function NameList({ list, sortFunc }: NameListProps) {
+  console.log("executed")
   const sortedList = useMemo<string[]>(() => {
-    console.log("rendered")
-    return [...list].sort()
-  }, [list])
+    console.log("executed")
+    return [...list].sort(sortFunc)
+  }, [list, sortFunc])
 
   return (
     <div>

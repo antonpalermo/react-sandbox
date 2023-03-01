@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react"
+import { useCallback, useReducer, useState } from "react"
 import NameList from "./Names"
 
 interface AppStates {
@@ -25,12 +25,17 @@ function App() {
     }
   }
 
+  const sort = useCallback(
+    (a: string, b: string) => a.localeCompare(b) * -1,
+    []
+  )
+
   return (
     <div className="App">
       <button onClick={() => dispatch({ type: "INCREMENT_COUNT" })}>
         Count {states.count}
       </button>
-      <NameList list={states.names} />
+      <NameList list={states.names} sortFunc={sort} />
     </div>
   )
 }

@@ -1,8 +1,8 @@
 {
   "id": "546301000004",
-  "Firstname": "Dave",
-  "Lastname": "Samson",
-  "Gender": "Female",
-  "Age": 20,
-  "Birthdate": "July 28, 2001"
+  "firstname": "Dave",
+  "lastname": "Samson",
+  "gender": "Female",
+  "age": 20,
+  "birthdate": "July 28, 2001"
 }

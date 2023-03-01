@@ -1,8 +1,8 @@
 {
   "id": "546301000003",
-  "Firstname": "Mike",
-  "Lastname": "Santos",
-  "Gender": "Male",
-  "Age": 23,
-  "Birthdate": "July 28, 1999"
+  "firstname": "Mike",
+  "lastname": "Santos",
+  "gender": "Male",
+  "age": 23,
+  "birthdate": "July 28, 1999"
 }

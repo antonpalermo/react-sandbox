@@ -1,6 +1,6 @@
 [
-  { "id": "546301000001", "Firstname": "Anton Angelo" },
-  { "id": "546301000002", "Firstname": "Camille" },
-  { "id": "546301000003", "Firstname": "Dave" },
-  { "id": "546301000004", "Firstname": "Mike" }
+  { "id": "546301000001", "firstname": "Anton Angelo" },
+  { "id": "546301000002", "firstname": "Camille" },
+  { "id": "546301000003", "firstname": "Dave" },
+  { "id": "546301000004", "firstname": "Mike" }
 ]

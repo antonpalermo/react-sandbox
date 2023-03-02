@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import Stopwatch from "./Stopwatch"
 import { User } from "./user"
 import UserDetails from "./UserDetails"
 
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <div className="App">
+      <Stopwatch />
       <h1>Names</h1>
       {names.map(name => (
         <div key={name.id}>

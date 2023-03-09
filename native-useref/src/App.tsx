@@ -1,32 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useEffect, useRef, useState } from "react"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const inputRef = useRef<HTMLInputElement>(null)
+  const [names, setNames] = useState(["Jayson"])
+
+  useEffect(() => {
+    inputRef.current?.focus()
+    const storedNames = localStorage.getItem("names")
+    if (storedNames) {
+      setNames(JSON.parse(storedNames))
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem("names", JSON.stringify(names))
+  }, [names])
+
+  function handleAddNames() {
+    if (inputRef.current?.value) {
+      setNames(prev => [...prev, inputRef.current?.value])
+    }
+  }
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <ul>
+        {names.map((name, i) => (
+          <li key={name + i}>{name}</li>
+        ))}
+      </ul>
+      <input type="text" ref={inputRef} />
+      <button onClick={handleAddNames}>Add</button>
     </div>
   )
 }
